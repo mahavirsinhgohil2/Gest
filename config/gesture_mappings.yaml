@@ -1,0 +1,102 @@
+# Default Gesture Mappings and Actions
+
+gestures:
+  # Hand gestures
+  thumbs_up:
+    name: "Thumbs Up"
+    description: "Thumb extended upward, other fingers closed"
+    action: "volume_up"
+    parameters:
+      volume_step: 5
+    enabled: true
+
+  thumbs_down:
+    name: "Thumbs Down"
+    description: "Thumb extended downward, other fingers closed"
+    action: "volume_down"
+    parameters:
+      volume_step: 5
+    enabled: true
+
+  peace_sign:
+    name: "Peace Sign"
+    description: "Index and middle fingers extended in V shape"
+    action: "screenshot"
+    parameters: {}
+    enabled: true
+
+  ok_sign:
+    name: "OK Sign"
+    description: "Thumb and index finger forming circle"
+    action: "left_click"
+    parameters: {}
+    enabled: true
+
+  pointing:
+    name: "Pointing"
+    description: "Index finger extended, others closed"
+    action: "cursor_move"
+    parameters:
+      sensitivity: 2.0
+    enabled: true
+
+  open_palm:
+    name: "Open Palm"
+    description: "All fingers extended"
+    action: "pause_resume"
+    parameters: {}
+    enabled: true
+
+  closed_fist:
+    name: "Closed Fist"
+    description: "All fingers closed"
+    action: "right_click"
+    parameters: {}
+    enabled: true
+
+# Action definitions
+actions:
+  volume_up:
+    type: "system"
+    command: "volume_increase"
+    description: "Increase system volume"
+
+  volume_down:
+    type: "system"
+    command: "volume_decrease"
+    description: "Decrease system volume"
+
+  screenshot:
+    type: "keyboard"
+    keys: ["cmd+shift+4"]  # macOS default
+    description: "Take a screenshot"
+
+  left_click:
+    type: "mouse"
+    button: "left"
+    description: "Perform left mouse click"
+
+  right_click:
+    type: "mouse"
+    button: "right"
+    description: "Perform right mouse click"
+
+  cursor_move:
+    type: "mouse"
+    action: "move"
+    description: "Move mouse cursor"
+
+  pause_resume:
+    type: "keyboard"
+    keys: ["space"]
+    description: "Pause/resume media playback"
+
+# Platform-specific overrides
+platform_overrides:
+  windows:
+    screenshot:
+      keys: ["win+shift+s"]
+    
+  linux:
+    screenshot:
+      keys: ["shift+print"]

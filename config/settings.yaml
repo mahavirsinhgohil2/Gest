@@ -1,0 +1,78 @@
+# Gest Application Settings
+
+# Application Configuration
+app:
+  name: "Gest - Real-time Hand Gesture Recognition"
+  version: "1.0.0"
+  debug: true
+  log_level: "INFO"
+
+# Camera Configuration
+camera:
+  device_id: 0
+  backup_device_ids: [1, 2]
+  width: 640
+  height: 480
+  fps: 30
+  timeout_ms: 5000
+
+# Detection Configuration
+detection:
+  hand_confidence: 0.7
+  face_confidence: 0.7
+  max_hands: 2
+  model_complexity: 1
+  min_tracking_confidence: 0.5
+
+# Feature Processing
+features:
+  normalization: true
+  smoothing_factor: 0.7
+  landmark_smoothing: true
+
+# Machine Learning
+ml:
+  model_type: "RandomForest"  # Options: SVM, RandomForest
+  test_size: 0.2
+  random_state: 42
+  cross_validation_folds: 5
+  
+# SVM specific settings
+svm:
+  kernel: "rbf"
+  C: 1.0
+  gamma: "scale"
+
+# Random Forest specific settings
+random_forest:
+  n_estimators: 100
+  max_depth: 10
+  min_samples_split: 2
+
+# GUI Configuration
+gui:
+  window_title: "Gest - Gesture Recognition"
+  window_size: [1200, 800]
+  theme: "light"
+  fps_display: true
+  performance_monitor: true
+
+# Performance Monitoring
+performance:
+  fps_smoothing: 0.9
+  latency_samples: 30
+  memory_monitoring: true
+
+# Data Collection
+data:
+  recordings_dir: "data/recordings"
+  models_dir: "data/models"
+  samples_per_gesture: 50
+  recording_duration: 3.0
+
+# Logging
+logging:
+  log_dir: "logs"
+  max_file_size: "10MB"
+  backup_count: 5
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {name}:{function}:{line} | {message}"
